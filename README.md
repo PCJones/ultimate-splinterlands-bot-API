@@ -13,8 +13,10 @@ I've tried to add comments where I could but it's really quite a mess, sorry aga
 ## Database
 The database in use is PostgreSQL
 
-## Game Crawler
-Sourcode for the crawler to add more games will follow soon
+## Game History Crawler
+Setup Database connection: Program.cs
+Setup Proxy servers: WebRequest.cs (it's coded for socks 5 servers but can work with almost all with minimal code changes)
+I've also added a quick workaround so that the crawler works without proxys
 
 ## Changing rating brackets
 Due to bad coding the rating bracket has to be changed in these places:
