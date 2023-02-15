@@ -19,7 +19,7 @@ Setup Proxy servers: WebRequest.cs (it's coded for socks 5 servers but can work 
 I've also added a quick workaround so that the crawler works without proxys
 
 ## Changing rating brackets
-Due to bad coding the rating bracket has to be changed in these places:
+Rating bracket has to be changed in these places:
 ```
 API: WebApi.GetRatingBracket()
 SQL Query: gamecache update.sql
