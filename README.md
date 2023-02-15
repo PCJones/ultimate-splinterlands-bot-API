@@ -15,3 +15,6 @@ The database in use is PostgreSQL
 
 ## Game Crawler
 Sourcode for the crawler to add more games will follow soon
+
+# Special thanks
+A huge thanks to @chaylins and @0xh3m4n7 for helping me with the more complex SQL queries!
