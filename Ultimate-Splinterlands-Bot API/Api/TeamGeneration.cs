@@ -351,13 +351,13 @@ namespace Ultimate_Splinterlands_Bot_API.Api
             internalCardIds = internalCardIds[0..^1];
 
             cmd.CommandText = TeamSelectQuery
-                .Replace("@format", format)
+                .Replace("@format", System.Web.HttpUtility.HtmlEncode(format))
                 .Replace("@usercards", internalCardIds)
                 .Replace("@minGamesPlayed", minGamesPlayed.ToString())
                 .Replace("@ratingBracket", ratingBracket == -1 ? "IS NOT NULL" : "= " + ratingBracket.ToString())
                 .Replace("@manaCap", manaCap.ToString())
-                .Replace("@ruleset1", rulesets[0])
-                .Replace("@ruleset2", rulesets.Length > 1 ? rulesets[1] : "")
+                .Replace("@ruleset1", System.Web.HttpUtility.HtmlEncode(rulesets[0]))
+                .Replace("@ruleset2", System.Web.HttpUtility.HtmlEncode(rulesets.Length > 1 ? rulesets[1] : ""))
                 .Replace("@additionalFilters", additionalFilters);
 
             using NpgsqlDataReader reader = cmd.ExecuteReader();
