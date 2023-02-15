@@ -16,5 +16,12 @@ The database in use is PostgreSQL
 ## Game Crawler
 Sourcode for the crawler to add more games will follow soon
 
+## Changing rating brackets
+Due to bad coding the rating bracket has to be changed in these places:
+HistoryCrawler: Crawler.UpdateCache()
+API: WebApi.GetRatingBracket()
+SQL Query: gamecache update.sql
+
+
 # Special thanks
 A huge thanks to @chaylins and @0xh3m4n7 for helping with the more complex SQL queries!
