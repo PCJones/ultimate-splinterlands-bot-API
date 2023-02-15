@@ -1,0 +1,1 @@
+Username=USERNAME;Password=PASSWORD;Host=IP_ADDRESS;Database=DATABASE_NAME;Timeout=30;Maximum Pool Size=90
