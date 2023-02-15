@@ -146,6 +146,12 @@ namespace HistoryCrawler
                             Proxy.Address = new Uri("socks5://" + PROXY_LIST[CurrentProxy] + ":" + PROXY_PORT);
                             Proxy.Credentials = new NetworkCredential(PROXY_USER, PROXY_PASS, PROXY_LIST[CurrentProxy]);
                         }
+                        else
+                        {
+                            Helper.WriteLogLine("Wait 4 minutes to avoid splinterlands rate limit...");
+                            Helper.WriteLogLine("Use proxies to avoid this");
+                            Task.Delay(4 * 60 * 1000).Wait();
+                        }
                         if (++CurrentProxy >= PROXY_LIST.Length)
                         {
                             CurrentProxy = 0;
