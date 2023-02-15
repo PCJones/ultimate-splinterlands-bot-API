@@ -9,3 +9,6 @@ If you need help in setting up the project you can also feel free to ask for hel
 ## Understanding the code
 Until there is better documentation, it's probably best to set a breakpoint at the beginning of the `TeamGeneration.GetTeamAsync()` method and then to debug trough the whole method.
 I've tried to add comments where I could but it's really quite a mess, sorry again :D
+
+## Game Crawler
+Sourcode for the crawler to add more games will follow soon
