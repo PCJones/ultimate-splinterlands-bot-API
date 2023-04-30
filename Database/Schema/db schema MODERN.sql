@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS "modern_Team_Card" (
     "Position"  INTEGER NOT NULL,
     FOREIGN KEY("CardId") REFERENCES "Card"("Id"),
 	PRIMARY KEY("TeamHash", "CardId", "Position"));
-CREATE INDEX ON public."wild_Team_Card" ("TeamHash");
-CREATE INDEX ON public."wild_Team_Card" ("CardId");
+CREATE INDEX ON public."modern_Team_Card" ("TeamHash");
+CREATE INDEX ON public."modern_Team_Card" ("CardId");
 
 --DROP TABLE IF EXISTS "modern_Team_Game" CASCADE;
 CREATE TABLE IF NOT EXISTS "modern_Team_Game" (
