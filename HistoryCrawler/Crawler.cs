@@ -154,11 +154,11 @@ namespace HistoryCrawler
         {
             try
             {
-                string data = await Request.GetPageAsync($"https://api2.splinterlands.com/battle/history?player={ username }").ConfigureAwait(false);
+                string data = await Request.GetPageAsync($"https://api2.splinterlands.com/battle/history?player={ username }&format=wild").ConfigureAwait(false);
                 if (data == "")
                 {
                     await Task.Delay(10000);
-                    data = await Request.GetPageAsync($"https://api2.splinterlands.com/battle/history?player={ username }").ConfigureAwait(false);
+                    data = await Request.GetPageAsync($"https://api2.splinterlands.com/battle/history?player={ username }&format=wild").ConfigureAwait(false);
                 }
                 if (data == "")
                 {
