@@ -542,7 +542,7 @@ namespace Ultimate_Splinterlands_Bot_API.Api
 
         public static void Initialize()
         {
-            string[] starterEditions = new string[] { "4", "7" };
+            string[] starterEditions = new string[] { "7", "12" };
             var cardsDetailsRaw = Helper.DownloadPageAsync("https://api2.splinterlands.com/cards/get_details").Result;
             CardsDetails = JArray.Parse(cardsDetailsRaw);
             DetailedCards = JsonConvert.DeserializeObject<List<DetailedCard>>(cardsDetailsRaw);
