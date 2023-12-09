@@ -406,13 +406,13 @@ namespace Ultimate_Splinterlands_Bot_API.Api
 
         private static void AddZeroManaCards(TeamResponseProperty[] battleProperties, PlayerCard[] playableCards, ApiRequestData apiRequestData, int freePositions, string teamColor, List<int> cardIds)
         {
-            /*  Keep Your Distance (No Melee allowed) would stop Fiends being used and the Chicken once it gets Melee 
+            /*  Keep Your Distance (No Melee allowed) / Going the Distance (Ranged Only) would stop Fiends being used and the Chicken once it gets Melee 
                 Odd Ones Out (only odd mana cards can be used) would stop 0 mana cards
                 Rise of the Commons would stop use of Epics and Legendary's (Fiends)
                 Taking Sides (No Neutral Monsters) - No Chicken
             */
             string rulesets = apiRequestData.Rulesets;
-            bool keepYourDistance = rulesets.Contains("Keep Your Distance");
+            bool keepYourDistance = rulesets.Contains("Keep Your Distance") || rulesets.Contains("Going the Distance");
             bool oddOnesOut = rulesets.Contains("Odd Ones Out");
             bool takingSides = rulesets.Contains("Taking Sides");
             bool riseOfTheCommons = rulesets.Contains("Rise of the Commons");
