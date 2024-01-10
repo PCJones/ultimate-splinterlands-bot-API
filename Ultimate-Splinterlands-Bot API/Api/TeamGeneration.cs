@@ -408,16 +408,23 @@ namespace Ultimate_Splinterlands_Bot_API.Api
         {
             /*  Keep Your Distance (No Melee allowed) would stop Fiends being used and the Chicken once it gets Melee 
                 Odd Ones Out (only odd mana cards can be used) would stop 0 mana cards
+                Wands Out (only monsters with magic can be used) would stop 0 mana cards
                 Rise of the Commons would stop use of Epics and Legendary's (Fiends)
                 Taking Sides (No Neutral Monsters) - No Chicken
             */
             string rulesets = apiRequestData.Rulesets;
             bool keepYourDistance = rulesets.Contains("Keep Your Distance");
             bool oddOnesOut = rulesets.Contains("Odd Ones Out");
+            bool wandsOut = rulesets.Contains("Wands Out");
             bool takingSides = rulesets.Contains("Taking Sides");
             bool riseOfTheCommons = rulesets.Contains("Rise of the Commons");
             bool lostLegendaries = rulesets.Contains("Lost Legendaries");
             bool upClosePersonal = rulesets.Contains("Up Close & Personal");
+
+            if (oddOnesOut || wandsOut)
+            {
+                return;
+            }
 
             int maxRarity;
             if (riseOfTheCommons)
@@ -434,11 +441,6 @@ namespace Ultimate_Splinterlands_Bot_API.Api
             }
             bool rarityLimited = riseOfTheCommons || lostLegendaries;
             bool neutralCardsAllowed = !takingSides;
-
-            if (oddOnesOut)
-            {
-                return;
-            }
 
             List<PlayerCard> zeroManaCards = playableCards.Where(x => (neutralCardsAllowed && x.GetCardColor() == "neutral") || x.GetCardColor() == teamColor)
                 .Where(x => ZeroManaMobs.Contains(Convert.ToInt32(x.card_detail_id)))
